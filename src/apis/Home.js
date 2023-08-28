@@ -10,12 +10,19 @@ import httpInstance from '@/utils/http.js'
  }
 
 
- //新鲜好物封装
- export const findNewAPI = () => {
+ /**
+ * @description: 获取新鲜好物
+ * @param {*}
+ * @return {*}
+ */
+export const findNewAPI = () => {
   return httpInstance({
-    url:'/home/new'
+    url: '/home/new'
   })
 }
+
+
+  
 /* /home/brand */
 //热门推荐
 export const findHotAPI = () => {

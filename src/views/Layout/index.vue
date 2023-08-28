@@ -14,9 +14,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutNav />
+  <LayoutNav />  
   <LayoutHeader />
   <LayoutSticky></LayoutSticky>
-  <RouterView />
+  <!-- <RouterView :key="$route.fullPath"/> -->
+  <RouterView/>
   <LayoutFooter />
 </template> 

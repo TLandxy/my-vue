@@ -4,10 +4,12 @@
 //定义props
 defineProps({
   title:{
-    type:String
+    type:String,
+    default: ''
   },
   subTitle:{
-    type:String
+    type:String,
+    default: ''
 
   }
 })

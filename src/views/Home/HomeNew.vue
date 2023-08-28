@@ -3,14 +3,15 @@ import HomePanel from '@/views/Home/HomePanel.vue';
 import { findNewAPI } from "@/apis/Home.js";
 import { onMounted, ref } from 'vue';
 
+
 const newList = ref([])
-const getGoods = async () => {
+
+const getNewList = async () => {
   const res = await findNewAPI()
   newList.value = res.result
 }
-onMounted(() => {
-  getGoods()
-})
+
+onMounted(() => getNewList())
 
 
 </script>
@@ -19,7 +20,7 @@ onMounted(() => {
   <HomePanel title="新鲜好物" subTitle="新鲜好物 好多商品">
   <ul class="goods-list">
     <li v-for="item in newList" :key="item.id">
-      <RouterLink to="/">
+      <RouterLink :to="`/detail/${item.id}`">
         <img :src="item.picture" alt="" />
         <p class="name">{{ item.name }}</p>
         <p class="price">&yen;{{ item.price }}</p>
