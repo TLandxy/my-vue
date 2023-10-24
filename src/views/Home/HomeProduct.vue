@@ -14,12 +14,12 @@ onMounted(() => getGoods())
 
 <template>
   <div class="home-product">
-    <HomePanel :title="cate.name" v-for="cate in goodsProduct" :key="cate.id">
+      <HomePanel :title="cate.name" v-for="cate in goodsProduct" :key="cate.id">
       <div class="box">
         <RouterLink class="cover" to="/">
           <img v-img-lazy="cate.picture" />
           <strong class="label">
-            <span>{{ cate.name }}馆</span>
+            <span>{{ cate.name }}</span>
             <span>{{ cate.saleInfo }}</span>
           </strong>
         </RouterLink>
@@ -29,7 +29,7 @@ onMounted(() => getGoods())
           </li>
         </ul>
       </div>
-    </HomePanel>
+    </HomePanel>  
   </div>
 </template>
 

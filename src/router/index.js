@@ -8,6 +8,10 @@ import Detail from '@/views/Detail/index.vue'
 import CartList from "@/views/CartList/index.vue";
 import Checkout from '@/views/Checkout/index.vue'
 import Pay from '@/views/Pay/index.vue'
+import PayBack from '@/views/Pay/PayBack.vue'
+import Menber from '@/views/Menber/index.vue'
+import UserInfo from '@/views/Menber/components/UserInfo.vue'
+import UserOrder from '@/views/Menber/components/UserOrder.vue'
 
 
 
@@ -17,7 +21,7 @@ const router = createRouter({
   routes: [
     {
       path:'/',
-      component:Layout,
+      component:Layout, 
       children:[
         {path:'',component:Home}, 
         {path:'category/:id',component:Category},
@@ -25,7 +29,11 @@ const router = createRouter({
         {path: 'detail/:id',component: Detail},
         {path:'cartlist',component:CartList},
         {path:'checkout',component:Checkout },
-        {path:'/pay',component:Pay}
+        {path:'pay',component:Pay},
+        {path:'paycallback',component:PayBack },
+        {path:'member',component:Menber,
+        children:[{path:'',component:UserInfo},
+                  {path:'order',component:UserOrder}]}
       ]
     },
     {
